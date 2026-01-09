@@ -11,7 +11,7 @@ if (mario) {
 
             // Wait 1 second, then start again
             setTimeout(startVibrating, 2000);
-        }, 8000);
+        }, 5000);
     }
 
     // Start immediately
@@ -26,22 +26,18 @@ if (mario) {
     cursedSound.volume = 0.4;
     let cursedPlayed = false;
 
-    // Function to play ringing in 3s on, 1s off loop
     function startRinging() {
         if (callAnswered) return;
-        callingSound.currentTime = 1;
+
+        callingSound.currentTime = 0;
         callingSound.play().catch(() => console.log("Autoplay blocked"));
 
-        // After 3s, stop, wait 1s, then repeat
         setTimeout(() => {
             callingSound.pause();
-            if(!callAnswered) {
-                setTimeout(startRinging, 1000);
-            }
-        }, 1000);
+            if (!callAnswered) setTimeout(startRinging, 100); // 1s break
+        }, 10000); // ring 2s
     }
 
-    // Start ringing immediately
     startRinging();
 
     // Click to pick up Mario
