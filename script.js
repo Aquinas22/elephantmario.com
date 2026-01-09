@@ -38,7 +38,7 @@ if (mario) {
             if(!callAnswered) {
                 setTimeout(startRinging, 1000);
             }
-        }, 8000);
+        }, 1000);
     }
 
     // Start ringing immediately
