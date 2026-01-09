@@ -16,16 +16,6 @@ header {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-nav a {
-  margin: 0 0.75rem;
-  text-decoration: none;
-  font-weight: bold;
-  color: #e60012;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
 
 main {
   max-width: 800px;
@@ -34,13 +24,9 @@ main {
   text-align: center;
 }
 
-.intro {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
 figure {
   margin: 2rem 0;
+  text-align: center;
 }
 
 #mario {
@@ -48,6 +34,8 @@ max-width: 100%;
 height: auto;
 cursor: pointer;
 transition: transform 0.2s ease;
+display: block;
+margin: 0 auto;
 }
 
 #mario.bounce {
