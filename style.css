@@ -5,7 +5,7 @@ box-sizing: border-box;
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(#ff3b3b, #ffb347);
+  background: linear-gradient(#df1620, #2716df);
   color: #222;
 }
 
@@ -22,6 +22,7 @@ main {
   margin: auto;
   padding: 2rem;
   text-align: center;
+  font-size: 16px;
 }
 
 figure {

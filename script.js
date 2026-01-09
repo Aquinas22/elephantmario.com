@@ -1,5 +1,7 @@
 const mario = document.getElementById("mario");
-
+while true do {
+        const sound = new Audio("sounds/mariocalling.mp3");
+}
 if (mario) {
     const sound = new Audio("sounds/mariocalling.mp3");
 
