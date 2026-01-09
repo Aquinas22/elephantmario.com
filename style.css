@@ -5,9 +5,10 @@ box-sizing: border-box;
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(#df1620, #2716df);
-  color: #222;
+  background: #f60b0b;
+  color: #000000;
   font-size: 14px;
+  text-align: center;
 }
 
 header {
@@ -15,14 +16,19 @@ header {
   padding: 1.5rem;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size:12px;
 }
-
-
+#callingtext {
+  color: #ffffff;
+  font-size: 26px;
+}
 main {
   max-width: 800px;
   margin: auto;
   padding: 2rem;
   text-align: center;
+  font-size: 30px;
+  color: #ffffff;
 }
 
 figure {
@@ -45,45 +51,40 @@ transform: scale(1.1) rotate(-2deg);
 .full-image {
   display: block;
   margin: 2rem auto;
-  max-width: 100%;
+  width: 20vw;
   height: auto;
   cursor: pointer;
-  animation: vibrate 0.1s infinite alternate;
+}
+@media (max-width: 768px) {
+  main {
+    font-size: 20px;
+  }
+  .full-image {
+    width: 90vw;      /* almost full screen on mobile */
+    max-width: 90%;  /* remove desktop cap */
+  }
+}
+
+.vibrate {
+  animation: vibrate 0.1s infinite;
 }
 
 @keyframes vibrate {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(2px, -2px) rotate(-1deg); }
-  50% { transform: translate(-2px, 2px) rotate(1deg); }
-  75% { transform: translate(1px, -1px) rotate(-1deg); }
-  100% { transform: translate(-1px, 1px) rotate(1deg); }
+  0%   { transform: translate(1px, 1px) rotate(0deg); }
+  25%  { transform: translate(-1px, -2px) rotate(-1deg); }
+  50%  { transform: translate(-3px, 0px) rotate(1deg); }
+  75%  { transform: translate(3px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -1px) rotate(1deg); }
 }
+
 
 .full-image.picked-up {
   animation: none;
   transform: scale(1.05); /* optional "picked up" effect */
 }
-
-figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-button {
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 999px;
-  background: #e60012;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 4px 0 #9e000c;
-}
-
-button:active {
-  transform: translateY(4px);
-  box-shadow: none;
+.wide{
+  width: 90vw;
+  max-width:90%;
 }
 
 footer {
@@ -91,5 +92,16 @@ footer {
   padding: 1rem;
   font-size: 0.85rem;
   background: #fff;
+}
+#calling {
+  padding: 40px 5px;
+  font-size: 30px;
+}
+.gif {
+  display: block;
+  margin: 2rem auto 3rem auto;  /* top 2rem, horizontal auto, bottom 3rem */
+  width: 50vw;
+  height: auto;
+  max-width: 90%;
 }
 

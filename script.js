@@ -1,6 +1,22 @@
 const mario = document.getElementById("mario");
-
+let callAnswered = false;
 if (mario) {
+    function startVibrating() {
+        // Add the class to start vibration
+        mario.classList.add("vibrate");
+
+        // Stop vibrating after 2 seconds
+        setTimeout(() => {
+            mario.classList.remove("vibrate");
+
+            // Wait 1 second, then start again
+            setTimeout(startVibrating, 2000);
+        }, 8000);
+    }
+
+    // Start immediately
+    startVibrating();
+
     // Ringing sound
     const callingSound = new Audio("sounds/mariocalling.mp3");
     callingSound.volume = 0.3;
@@ -12,14 +28,17 @@ if (mario) {
 
     // Function to play ringing in 3s on, 1s off loop
     function startRinging() {
-        callingSound.currentTime = 0;
+        if (callAnswered) return;
+        callingSound.currentTime = 1;
         callingSound.play().catch(() => console.log("Autoplay blocked"));
 
         // After 3s, stop, wait 1s, then repeat
         setTimeout(() => {
             callingSound.pause();
-            setTimeout(startRinging, 1000); // 1s break
-        }, 3000);
+            if(!callAnswered) {
+                setTimeout(startRinging, 1000);
+            }
+        }, 8000);
     }
 
     // Start ringing immediately
@@ -28,6 +47,7 @@ if (mario) {
     // Click to pick up Mario
     mario.addEventListener("click", () => {
         // Stop ringing completely
+        callAnswered = true;
         callingSound.pause();
         callingSound.currentTime = 0;
 
