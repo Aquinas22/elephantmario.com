@@ -1,0 +1,9 @@
+<img src="images/myphoto.jpg" alt="Description" class="my-image">
+
+<style>
+.my-image {
+  width: 50%;      /* Responsive width */
+  border: 2px solid black;
+  border-radius: 8px;
+}
+</style>
