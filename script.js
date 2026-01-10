@@ -35,7 +35,7 @@ if (mario) {
         setTimeout(() => {
             callingSound.pause();
             if (!callAnswered) setTimeout(startRinging, 100); // 1s break
-        }, 10000); // ring 2s
+        }, 8000); // ring 2s
     }
 
     startRinging();
