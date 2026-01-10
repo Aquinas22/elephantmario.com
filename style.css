@@ -42,6 +42,7 @@ height: auto;
 cursor: pointer;
 transition: transform 0.2s ease;
 display: block;
+pointer-events: auto;
 margin: 0 auto;
 }
 
